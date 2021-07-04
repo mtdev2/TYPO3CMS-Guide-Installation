@@ -36,25 +36,16 @@ In the backend:
 
 .. rst-class:: bignums
 
-1. Got to :guilabel:`"ADMIN TOOLS" > "Extensions"`
+1. Go to :guilabel:`"ADMIN TOOLS" > "Extensions"`
 2. In the Docheader, select :guilabel:`"Get Extensions"`
 
-   .. figure:: ../Images/em_extensions.png
-      :class: with-shadow
-      :alt: Select "Get Extensions" in Extension Manager
-
-      Select "Get Extensions" in Extension Manager
+   .. include:: /Images/ManualScreenshots/NonComposer/ExtensionManagerExtensions.rst.txt
 
 3. Click :guilabel:`"Update now"`
 
    The button is on the top right.
 
-
-   .. figure:: ../Images/em_extensions_get.png
-      :class: with-shadow
-      :alt: Search for the extension and install
-
-      Search for the extension and install
+   .. include:: /Images/ManualScreenshots/NonComposer/ExtensionManagerExtensionsGet.rst.txt
 
 
 4. Enter the name of the extension in the search field
@@ -103,9 +94,7 @@ extensions manually with :file:`PackageStates.php` as a last resort, see :ref:`u
 Uninstall / Deactivate Extension via TYPO3 Backend
 --------------------------------------------------
 
-.. figure:: ../Images/em-uninstall-extension.png
-   :class: with-shadow
-   :alt: Select "Deactivate" in Extension Manager
+.. include:: /Images/AutomaticScreenshots/ExtensionManager/UninstallExtension.rst.txt
 
 Log into the TYPO3 Backend and open the Extension Manager ('Ext Manager'). From the menu choose 'Install extensions'.
 You get an overview about installed extensions.
@@ -122,11 +111,9 @@ the grey Extension Install Icon.
 .. _remove-extension-backend:
 
 Remove an Extension via the TYPO3 Backend
---------------------------------------------------
+-----------------------------------------
 
-.. figure:: ../Images/em-remove-extension.png
-   :class: with-shadow
-   :alt: Select "Remove" in Extension Manager
+.. include:: /Images/ManualScreenshots/NonComposer/ExtensionManagerRemoveExtension.rst.txt
 
 After successfully uninstalling an extension via the Extension Manager you can permanently remove the extension by
 clicking on the waste-basket symbol "Remove" beside the extensions entry in the Extension Manager.
@@ -251,11 +238,7 @@ for example `for the extension news <https://extensions.typo3.org/extension/news
 
 Here, the package name is `georgringer/news`.
 
-.. figure:: ../Images/ter_news.png
-   :class: with-shadow
-   :alt: Detail view for extension "news"
-
-   Detail view for extension "news"
+.. include:: /Images/ExternalScreenshots/TerNews.rst.txt
 
 Often the package name will be vendor + slash + extension key.
 However, if the extension key contains an underscore, it is replaced
@@ -279,7 +262,7 @@ as well.
 
 This is relevant, because after the installation, both need to be activated.
 
-You can see the dependencies on https://packagist.org (for example for the 
+You can see the dependencies on https://packagist.org (for example for the
 `Introduction Package <https://packagist.org/packages/typo3/cms-introduction>`__)
 or in the composer.json file of the extension, for example:
 
@@ -314,13 +297,9 @@ Find out the Extension Key for an Extension
 -------------------------------------------
 
 Again, go to the `Extension Repository <https://extensions.typo3.org/>`__,
-and search for the extension.
+and search for the extension
 
-.. figure:: ../Images/ter_news.png
-   :class: with-shadow
-   :alt: Detail view for extension "news"
-
-   Detail view for extension "news"
+.. include:: /Images/ExternalScreenshots/TerNews.rst.txt
 
 The extension key is listed on the top. For the
 `extension news <https://extensions.typo3.org/extension/news/>`__,

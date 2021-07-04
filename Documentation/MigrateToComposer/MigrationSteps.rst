@@ -53,15 +53,16 @@ The :file:`composer.json` in the Base distribution includes a scripts section:
 
 .. code-block:: json
 
-
-   "scripts":{
-      "typo3-cms-scripts": [
-         "typo3cms install:generatepackagestates",
-         "typo3cms install:fixfolderstructure"
-      ],
-      "post-autoload-dump": [
-         "@typo3-cms-scripts"
-      ]
+   {
+      "scripts": {
+         "typo3-cms-scripts": [
+            "typo3cms install:generatepackagestates",
+            "typo3cms install:fixfolderstructure"
+         ],
+         "post-autoload-dump": [
+            "@typo3-cms-scripts"
+         ]
+      }
    }
 
 
@@ -119,11 +120,11 @@ Install the system extensions::
 
     composer require typo3/minimal:^9.5
     composer require typo3/cms-scheduler:^9.5
-    composer require ... 
+    composer require ...
 
 Or in one line::
 
-    composer require typo3/cms-minimal:^9.5 typo3/cms-scheduler:^9.5 ... 
+    composer require typo3/cms-minimal:^9.5 typo3/cms-scheduler:^9.5 ...
 
 To find the correct package names, you can either take a look in the
 :file:`composer.json` of any system extension or follow the naming
@@ -135,9 +136,9 @@ e.g. :file:`typo3/cms-fluid-styled-content`.
 
     To find out all TYPO3 Core packages, you can visit the TYPO3 Composer Helper website.
     https://get.typo3.org/misc/composer/helper
-    From this website, you can select TYPO3 Core Packages you need and generate 
+    From this website, you can select TYPO3 Core Packages you need and generate
     the composer command to require them.
-    
+
 
 Install Extensions from Packagist
 ---------------------------------
@@ -156,7 +157,7 @@ correct Composer key on `packagist.org <https://packagist.org>`__. Some maintain
 search the extension in TER, you will see a message, which command and Composer
 key you can use to install this extension.
 
-|TER Composer command|
+.. include:: /Images/ExternalScreenshots/TerComposerCommand.rst.txt
 
 .. note::
 
@@ -170,7 +171,7 @@ If you search the extension in https://composer.typo3.org/satis.html and it's li
 `packagist.org <https://packagist.org>`__, they are marked as "abandoned" and you
 will see a message, which Composer key should be used to install this extension.
 
-|satis abandoned note|
+.. include:: /Images/ExternalScreenshots/SatisAbandoned.rst.txt
 
 See Warning During `composer require` Command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -178,7 +179,7 @@ See Warning During `composer require` Command
 If you still install one of the abandoned extensions via its `typo3-ter` package key,
 you will also see a warning during the `composer require` command.
 
-|composer abandoned note|
+.. include:: /Images/ExternalScreenshots/ComposerTerAbandoned.rst.txt
 
 Check Manually
 ~~~~~~~~~~~~~~
@@ -191,21 +192,21 @@ does not provide additional information.
 
 #. Click button "Take a look into the code".
 
-   |TER screen shot|
+   .. include:: /Images/ExternalScreenshots/TerCodeLink.rst.txt
 
 #. Open file :file:`composer.json`.
 
-   |file list|
+   .. include:: /Images/ExternalScreenshots/GithubComposerFile.rst.txt
 
 #. Search for line with property `"name"`, it's value should be
    formatted like `vendor/package`.
 
-   |file content|
+   .. include:: /Images/ExternalScreenshots/GithubComposerName.rst.txt
 
 #. Check, if the package can be found on
    `packagist.org <https://packagist.org>`__.
 
-   |packagist screen shot|
+   .. include:: /Images/ExternalScreenshots/PackagistMask.rst.txt
 
 **Example:**
 To install the mask extension in version 4.1.\*, type::
@@ -280,11 +281,13 @@ additional lines added to the :file:`composer.json` from above:
 
    .. code-block:: json
 
-      "extra": {
+      {
+         "extra": {
             "typo3/cms": {
-                "cms-package-dir": "{$vendor-dir}/typo3/cms"
+               "cms-package-dir": "{$vendor-dir}/typo3/cms"
             }
-       }
+         }
+      }
 
    There is no harm in that, but it won't have any effect.
 
@@ -370,7 +373,7 @@ To complete our example :file:`composer.json`, it would look like this:
             ]
         }
     }
-    
+
 After adding paths to the autoload you should run `composer dumpautoload`. This command will re-generate the autoload info and should be run anytime you add new paths to the autoload portion in the :file:`composer.json`.
 
 .. note::
@@ -380,19 +383,6 @@ After adding paths to the autoload you should run `composer dumpautoload`. This 
     there is an alternative way to include your individual extensions in the chapter
     :ref:`completely clear "typo3conf/ext" folder <mig-composer-clear-typo3conf-ext-folder>`
     in the :ref:`Best practices <mig-composer-best-practices>` section.
-
-.. |TER composer command| image:: ../Images/ter-composer-command.png
-   :scale: 65 %
-.. |TER screen shot| image:: ../Images/ter-code-link.png
-   :scale: 65 %
-.. |file list| image:: ../Images/github-composer-file.png
-   :scale: 80 %
-.. |file content| image:: ../Images/github-composer-name.png
-   :scale: 80 %
-.. |packagist screen shot| image:: ../Images/packagist-mask.png
-   :scale: 65 %
-.. |satis abandoned note| image:: ../Images/satis-abandoned.png
-.. |composer abandoned note| image:: ../Images/composer-ter-abandoned.png
 
 
 New file locations

@@ -22,8 +22,10 @@ First go to your site and enter the admin tool via `/typo3/install.php`, e.g. ht
 
 .. note::
 
-   The Admin tool was called "Install Tool" in earlier versions, you will
-   likely still see that term in some places.
+   The :guilabel:`Admin tool` in the backend was called "Install Tool" in earlier versions. 
+   
+   There is a tool called "Admin Panel" in the frontend. It has nothing to do with
+   the "Admin tool" described here. See :ref:`Admin Panel<t3tsref:useradmpanel>`.
 
 
 .. _important-actions:
@@ -34,12 +36,7 @@ Maintenance
 The section provides basic information about your system and several functions
 which you need for maintenance tasks.
 
-.. figure:: ../../Images/admin-tools-maintenance-overview.png
-   :class: with-shadow
-   :alt: Admin Tools: Maintenance Overview
-
-   The "Maintenance" section of the Install Tool.
-
+.. include:: /Images/AutomaticScreenshots/AdminTools/AdminToolsMaintenanceOverview.rst.txt
 
 The **Flush TYPO3 and PHP Cache** functionality can empty all caches: Frontend,
 Backend, language caches and the OPCode Cache.
@@ -87,6 +84,8 @@ Settings
 ========
 
 This area allows you to configure both TYPO3 extensions as well as the core.
+
+.. include:: /Images/AutomaticScreenshots/AdminTools/AdminToolsSettingsOverview.rst.txt
 
 In **Extension Configuration** you can configure all enabled extensions that
 provide custom configuration options.
@@ -160,6 +159,8 @@ Environment
 The section contains a huge number of environment checks, which notify you of
 (potential) problems in your installation.
 
+.. include:: /Images/AutomaticScreenshots/AdminTools/AdminToolsEnvironmentOverview.rst.txt
+
 The **Environment Overview** provides a short system overview that you can also
 access via Application Information in the top bar.
 
@@ -169,6 +170,8 @@ potentially wrong or missing settings.
 With **Directory Status** you can check whether all required files and folders
 exist and are writable when necessary. It also shows the default file and
 folder permissions TYPO3 will apply on creation of assets.
+It offers you the possibility to create a file :file:`.htaccess` in the TYPO3 root directory.
+This is the recommended way.
 
 **PHP Info** simply outputs the `phpinfo()`.
 

@@ -9,34 +9,26 @@ The Admin Tool
 
 .. tip::
 
-   The "Admin Tool" was formerly called "Install Tool".
+   The "Admin Tool" is also called "Install Tool".
 
 
 #. Hit the start page of your freshly created site with your browser and you
    should see the "thank you for downloading"-message.
 
-   .. figure:: ../../Images/FirstInstall.png
-      :class: with-shadow
-      :alt: Success message after download.
-
-      Success message after download.
+   .. include:: /Images/AutomaticScreenshots/QuickInstall/EnableFirstInstall.rst.txt
 
 
-#. Create the file FIRST_INSTALL in your web root directory (`public` folder)
-   and reload the page. You will be redirected to the install tool. It will
+#. Create an empty file :file:`FIRST_INSTALL` in your web root directory (e.g. `public` folder).
+   Then reload the page. You will be redirected to the installation process. It will
    guide you through the steps for installing TYPO3. The Install Tool is
-   located in 'typo3/install' in your installation which for example would be
+   located in 'typo3/install.php' in your installation which for example would be
    `http://www.example.com/typo3/install.php
    <http://www.example.com/typo3/install.php>`_.
 
 
 #. This is what you should see:
 
-   .. figure:: ../../Images/QuickInstall-1-System-Environment.png
-      :alt: first step
-      :class: with-shadow
-
-      Install Tool in 1-2-3 mode, first step.
+   .. include:: /Images/AutomaticScreenshots/QuickInstall/Step1SystemEnvironment.rst.txt
 
 
 #. In case you have problems in your Environment, you will get warnings or
@@ -51,16 +43,14 @@ The Admin Tool
    but you should choose one of the others for running production grade web
    sites.
 
-   .. figure:: ../../Images/QuickInstall-2-Database-Connection.png
-      :alt: third step
-      :class: with-shadow
-
-      Install Tool in 1-2-3 mode, second step.
+   .. include:: /Images/AutomaticScreenshots/QuickInstall/Step2DatabaseConnection.rst.txt
 
 
 #. *Choose Database.* If you did not select SQLite in the previous step, you
    have to select an empty database for TYPO3 now (or create one if your user
    is allowed to).
+
+   .. include:: /Images/AutomaticScreenshots/QuickInstall/Step3ChooseDb.rst.txt
 
 
 #. Enter a username and password for your first TYPO3 administrator account.
@@ -68,22 +58,14 @@ The Admin Tool
    will also be used for the Install Tool. The "site name" will identify this
    installation (in the page tree and browser title).
 
-   .. figure:: ../../Images/QuickInstall-4-Admin-User-Sitename.png
-      :alt: forth step
-      :class: with-shadow
-
-      Install Tool in 1-2-3 mode, forth step.
+   .. include:: /Images/AutomaticScreenshots/QuickInstall/Step4AdminUserSitename.rst.txt
 
 
 #. In the last step you can choose whether you want to start with an empty
    TYPO3 or if you want to have a basis to start from.
 
 
-   .. figure:: ../../Images/QuickInstall-5-Last-Step.png
-      :alt: fifth step
-      :class: with-shadow
-
-      Install Tool in 1-2-3 mode, fifth step.
+   .. include:: /Images/AutomaticScreenshots/QuickInstall/Step5LastStep.rst.txt
 
    .. tip::
 
@@ -103,5 +85,4 @@ If you do not wish to install the "Introduction Package", choose
 **The installation is now complete.**
 
 Find some more tips in :ref:`install-next-steps`.
-
 
