@@ -1,6 +1,6 @@
-.. include:: /Includes.txt
+.. include:: /Includes.rst.txt
 
-.. _migrate-content:
+.. _migratecontent:
 
 ===============
 Migrate content
@@ -31,6 +31,36 @@ On composer based installations it can be required via
 Export your data
 ================
 
+Via CLI command
+----------------
+
+Exporting a TYPO3 page tree without php time limit is possible via
+:ref:`Symfony Console Commands (cli) <symfony-console-commands-cli>`.
+
+.. code-block:: bash
+   :caption: Composer based installation
+
+   vendor/bin/typo3 impexp:export [options] [--] [<filename>]
+
+.. note::
+   If your TYPO3 installation is not based on composer you can run the command
+   with :bash:`typo3/sysext/core/bin/typo3 impexp:export` instead.
+
+and exports the entire TYPO3 page tree - or parts of it - to a data file of
+format XML or T3D, which can be used for import into any TYPO3 instance.
+
+The export can be fine-tuned through the complete set of options also
+available in the export view of the TYPO3 backend:
+You can see the complete list of options by calling the help for the command:
+
+.. code-block:: bash
+
+   vendor/bin/typo3 help impexp:export
+
+
+Manual export from the TYPO3 backend
+------------------------------------
+
 .. rst-class:: bignums
 
    1. Go to the export module
@@ -38,19 +68,11 @@ Export your data
       On the page tree left click on the page from where you want to start the
       export. Select :guilabel:`More options ...`:
 
-      .. figure:: /Images/ImpExpContext.png
-         :class: with-shadow
-         :alt: Select "More options..." from the context menu of the page tree
-
-         Select "More options..." from the context menu of the page tree
+      .. include:: /Images/AutomaticScreenshots/ImportExport/ContextMenuMore.rst.txt
 
       Then select :guilabel:`Export` from the context menu.
 
-      .. figure:: /Images/ImpExpContext2.png
-         :class: with-shadow
-         :alt: Then select "Export"
-
-         Select Then select "Export"
+      .. include:: /Images/AutomaticScreenshots/ImportExport/ContextMenuExport.rst.txt
 
    2. Select the tables to be exported
 
@@ -59,11 +81,7 @@ Export your data
       is also possible to include static relations to tables already present
       in the target installation.
 
-      .. figure:: /Images/ImpExpDialog.png
-         :class: with-shadow
-         :alt: Select the tables to be exported
-
-         Select the tables to be exported
+      .. include:: /Images/AutomaticScreenshots/ImportExport/ExportDialog.rst.txt
 
    3. Choose number of levels to be exported
 
@@ -71,11 +89,7 @@ Export your data
       select 'Infinite' from the :guilabel:`Levels` select box and hit the
       :guilabel:`Update` Button at the end of the dialog.
 
-      .. figure:: /Images/ImpExpDialogInfinite.png
-         :class: with-shadow
-         :alt: Select the page levels to be exported
-
-         Select the page levels to be exported
+      .. include:: /Images/AutomaticScreenshots/ImportExport/ExportDialogInfiniteLevels.rst.txt
 
    4. Check the included records
 
@@ -88,22 +102,14 @@ Export your data
       orange exclamation mark. Reasons for lost relations include records
       stored outside the page tree to be exported and excluded tables.
 
-      .. figure:: /Images/ImpExpCheckExport.png
-         :class: with-shadow
-         :alt: Check the exported data
-
-         Check and adjust the exported data.
+      .. include:: /Images/AutomaticScreenshots/ImportExport/CheckExport.rst.txt
 
    5. Save or export the data
 
       You can save the exported data to your server or download it in the
       tab :guilabel:`File & Preset`.
 
-      .. figure:: /Images/ImpExpDownload.png
-         :class: with-shadow
-         :alt: Download the export data
-
-         Download the export data
+      .. include:: /Images/AutomaticScreenshots/ImportExport/DownloadExport.rst.txt
 
 Import your data
 ================
@@ -113,6 +119,36 @@ Import your data
    Make sure all needed extensions are installed and the database scheme
    is up to date before starting the import. Otherwise the data related
    to non-existing tables will not get imported.
+
+
+Via CLI command
+----------------
+
+Importing a TYPO3 page tree without php time limit is possible via
+:ref:`Symfony Console Commands (cli) <symfony-console-commands-cli>`.
+
+.. code-block:: bash
+   :caption: Composer based installation
+
+   vendor/bin/typo3 impexp:import [options] [--] [<filename>]
+
+.. note::
+   If your TYPO3 installation is not based on composer you can run the command
+   with :shell:`typo3/sysext/core/bin/typo3 impexp:import` instead.
+
+
+The import can be fine-tuned through the complete set of options also
+available in the import view of the TYPO3 backend. You can see the complete
+list of options by calling the help for the command:
+
+
+.. code-block:: bash
+
+   vendor/bin/typo3 help impexp:import
+
+
+Manual import from the TYPO3 backend
+------------------------------------
 
 .. rst-class:: bignums
 
@@ -124,11 +160,7 @@ Import your data
       the imported page should be as starting point for the import. If you
       want to import the data at root-level, choose the
 
-      .. figure:: /Images/ImpExUpload.png
-         :class: with-shadow
-         :alt: Upload the export data
-
-         Upload the export data
+      .. include:: /Images/AutomaticScreenshots/ImportExport/UploadImport.rst.txt
 
    2. Preview the data do be imported
 
@@ -136,11 +168,7 @@ Import your data
       automatically. If you change some options you can reload
       this display with the :guilabel:`preview` button.
 
-      .. figure:: /Images/ImpExImport.png
-         :class: with-shadow
-         :alt: Preview the data
-
-         Preview the data
+      .. include:: /Images/ManualScreenshots/ImportExport/ImportPreview.rst.txt
 
    3. Import
 
@@ -158,8 +186,4 @@ The following shows the export dialog of TYPO3 installation of version
 3.8.0. It is often more feasible to use the Import / Export tool then to
 attempt to update very old TYPO3 installations.
 
-.. figure:: /Images/ImpExpV3.8.png
-   :class: with-shadow
-   :alt: Export module of TYPO3 3.8.0 (year 2005)
-
-   Export module of TYPO3 3.8.0 (year 2005)
+.. include:: /Images/ManualScreenshots/ImportExport/ImpExpV3.8.rst.txt
